@@ -1,4 +1,4 @@
-# hapi-configure
+# jerry-the-bellybutton-elf
 
 Environment-aware server configuration for [Hapi](http://hapijs.com) using [Confit](https://github.com/krakenjs/confit).
 
@@ -89,10 +89,10 @@ In addition, the [confit](https://github.com/krakenjs/confit) configuration will
 
 ```javascript
 import Path from 'path';
-import HapiConfigure from 'hapi-configure';
+import JerryTheBellybuttonElf from 'jerry-the-bellybutton-elf';
 
 //Note: will return a promise if no callback.
-HapiConfigure({ basedir: Path.join(__dirname, 'config')}, (error, server) => {
+JerryTheBellybuttonElf({ basedir: Path.join(__dirname, 'config')}, (error, server) => {
     if (error) {
         console.log(error);
         return;
@@ -110,5 +110,5 @@ HapiConfigure({ basedir: Path.join(__dirname, 'config')}, (error, server) => {
 You can also run from the command line, assuming you have a configuration that doesn't rely on performing post-config steps.
 
 ```shell
-hapi-configure ./config
+jerry-the-bellybutton-elf ./config
 ```

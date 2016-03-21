@@ -1,13 +1,13 @@
 {
-  "name": "hapi-configure",
+  "name": "jerry-the-bellybutton-elf",
   "description": "Environment-aware server configuration for Hapi using Confit.",
   "version": "3.0.0",
   "author": "Trevor Livingston <tlivings@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tlivings/hapi-configure.git"
+    "url": "git://github.com/tlivings/jerry-the-bellybutton-elf.git"
   },
-  "bugs": "http://github.com/tlivings/hapi-configure/issues",
+  "bugs": "http://github.com/tlivings/jerry-the-bellybutton-elf/issues",
   "engines": {
     "node": ">= 4.0.0"
   },
