@@ -1,16 +1,16 @@
 'use strict';
 
 import Test from 'tape';
-import HapiConfigure from '../dist/lib';
+import JerryTheBellybuttonElf from '../dist/lib';
 import Path from 'path';
 
-Test('test hapi-configure', t => {
+Test('test jerry-the-bellybutton-elf', t => {
 
     t.test('configures', async t => {
         t.plan(7);
 
         try {
-            const server = await HapiConfigure();
+            const server = await JerryTheBellybuttonElf();
 
             t.ok(server, 'server not null.');
             t.ok(server.settings.debug.log, 'override server properties.');
@@ -39,7 +39,7 @@ Test('test hapi-configure', t => {
         t.plan(1);
 
         try {
-            const server = await HapiConfigure({
+            const server = await JerryTheBellybuttonElf({
                 basedir: Path.join(__dirname, 'fixtures/badconfig')
             });
         }
