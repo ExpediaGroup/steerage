@@ -15,7 +15,7 @@ It takes the following arguments:
     - `basedir` - optional alternative location to base `shortstop` relative paths from.
     - `hooks` - an optional object containing hook functions consisting of:
         - `config(manifest, callback)` - hook for modifying config prior to compose.
-        - `connection(config, callback)` - hook for modifying the server connection config before added.
+        - `connection(name, config, callback)` - hook for modifying the server connection config before added.
         - `register(name, options, callback)` - hook for modifying the plugin options before register.
     - `protocols` - optional additional custom protocols for `shortstop`.
     - `environment` - optional additional criteria for `confidence` property resolution.
