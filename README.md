@@ -76,20 +76,6 @@ Example:
             },
             "select": ["api", "web"]
         }
-    },
-    "routes": {
-        "testRoute": {
-            "path": "/test",
-            "method": "GET",
-            "handler": {
-                "module": "require:../handlers",
-                "method": "createTestHandler",
-                "arguments": [
-                    "testArgument"
-                ]
-            },
-            "select": ["web"]
-        }
     }
 }
 ```

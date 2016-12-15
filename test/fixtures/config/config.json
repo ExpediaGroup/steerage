@@ -17,7 +17,7 @@
             "labels": ["web"]
         }
     },
-    "plugins": {
+    "register": {
         "testPlugin": {
             "register": {
                 "$filter": "env",

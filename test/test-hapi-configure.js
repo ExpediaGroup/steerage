@@ -8,7 +8,7 @@ const Path = require('path');
 Test('test steerage', (t) => {
 
     t.test('configures', Async(function *(t) {
-        t.plan(7);
+        t.plan(6);
 
         try {
             const server = yield Steerage({
@@ -25,32 +25,33 @@ Test('test steerage', (t) => {
             t.equal(plugins[0], 'testPlugin2', 're-ordered plugins.');
 
             t.ok(server.app.config.get('/server'), 'server.app.config accessible.');
-
-            const response = yield server.select('web').inject({
-                method: 'GET',
-                url: '/test'
-            });
-
-            t.equal(response.payload, 'testArgument', 'added arguments to handler factory.');
         }
         catch (error) {
             console.log(error.stack);
         }
     }));
 
-    t.test('overrides', Async(function *(t) {
-        t.plan(2);
-
+    t.test('hooks', Async(function *(t) {
         try {
-            const server = yield Steerage({
+            yield Steerage({
                 config: Path.join(__dirname, 'fixtures', 'config', 'config.json'),
-                onconfig: (config, callback) => {
-                    t.pass('called onconfig');
-                    callback(null, config);
+                hooks: {
+                    connection(config, callback) {
+                        t.pass('called connection hook');
+                        callback(null, config);
+                    },
+                    config(config, callback) {
+                        t.pass('called config hook');
+                        callback(null, config);
+                    },
+                    register(name, options, callback) {
+                        t.pass('called register hook');
+                        callback(null, options);
+                    }
                 }
             });
 
-            t.ok(server, 'server not null.');
+            t.end();
         }
         catch (error) {
             console.log(error.stack);
