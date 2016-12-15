@@ -13,7 +13,10 @@ It takes the following arguments:
 - `options`
     - `config` - a fully resolved path to a configuration document (relative paths in this document are from the document's location).
     - `basedir` - optional alternative location to base `shortstop` relative paths from.
-    - `onconfig(manifest, callback)` - an optional hook for modifying (`shortstop` resolved) config prior to compose.
+    - `hooks` - an optional object containing hook functions consisting of:
+        - `config(manifest, callback)` - hook for modifying config prior to compose.
+        - `connection(config, callback)` - hook for modifying the server connection config before added.
+        - `register(name, options, callback)` - hook for modifying the plugin options before register.
     - `protocols` - optional additional custom protocols for `shortstop`.
     - `environment` - optional additional criteria for `confidence` property resolution.
 - `callback(error, server)` - an optional callback - omitting returns a promise.
@@ -24,12 +27,8 @@ The resulting configuration (please see [Confidence](https://github.com/hapijs/c
 
 - `server` - optional [server options](http://hapijs.com/api#new-serveroptions).
 - `connections` - object defining [server connections](http://hapijs.com/api#serverconnectionoptions), with key name being a default label.
-- `plugins` - an object defining [plugins](http://hapijs.com/api#plugins), with optional additional properties:
+- `register` - an object defining [plugins](http://hapijs.com/api#plugins), with optional additional properties:
     - `select` - passed to `register`.
-    - `before` - a string or array of strings of plugin names (keys in the `plugins` object) used to reorder.
-    - `after` - a string or array of strings of plugin names used to reorder.
-- `routes` - an object defining [routes](http://hapijs.com/tutorials/routing), with in addition to standard properties:
-    - `select` - optional array of connection labels.
     - `before` - a string or array of strings of plugin names (keys in the `plugins` object) used to reorder.
     - `after` - a string or array of strings of plugin names used to reorder.
 
@@ -64,7 +63,7 @@ Example:
             "labels": ["web"]
         }
     },
-    "plugins": {
+    "register": {
         "good": {
             "register": "require:good",
             "options": {
