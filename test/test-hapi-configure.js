@@ -36,12 +36,12 @@ Test('test steerage', (t) => {
             yield Steerage({
                 config: Path.join(__dirname, 'fixtures', 'config', 'config.json'),
                 hooks: {
-                    connection(name, config, callback) {
-                        t.pass('called connection hook');
-                        callback(null, config);
-                    },
                     config(config, callback) {
                         t.pass('called config hook');
+                        callback(null, config);
+                    },
+                    connection(name, config, callback) {
+                        t.pass('called connection hook');
                         callback(null, config);
                     },
                     register(name, options, callback) {
