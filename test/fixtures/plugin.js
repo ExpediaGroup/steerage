@@ -5,7 +5,7 @@ const register = (server, options, next) => {
 };
 
 register.attributes = {
-    name: 'testPlugin',
+    name: 'prodPlugin',
     version: '1.0.0'
 };
 

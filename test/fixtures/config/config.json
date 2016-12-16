@@ -2,7 +2,7 @@
     "server": {
         "debug": {
             "log": {
-                "$filter": "env",
+                "$filter": "NODE_ENV",
                 "$default": ["debug"],
                 "production": ["warn"]
             }
@@ -18,16 +18,16 @@
         }
     },
     "register": {
-        "testPlugin": {
+        "devPlugin": {
             "register": {
-                "$filter": "env",
+                "$filter": "NODE_ENV",
                 "$default": "require:../devPlugin.js",
                 "production": "require:../plugin.js"
             }
         },
-        "testPlugin2": {
+        "otherPlugin": {
             "register": "require:../otherPlugin.js",
-            "before": "testPlugin",
+            "before": "devPlugin",
             "select": ["web"]
         }
     },
