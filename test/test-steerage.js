@@ -7,7 +7,7 @@ const Path = require('path');
 const Hapi = require('hapi');
 
 Test('configures', Async(function *(t) {
-    t.plan(5);
+    t.plan(6);
 
     const server = new Hapi.Server();
 
@@ -19,6 +19,7 @@ Test('configures', Async(function *(t) {
             }
         });
 
+        t.equal(server.settings.debug.log[0], 'debug', 'override of server settings.');
         t.equal(server.connections.length, 2, 'set connections.');
         t.ok(server.select('web').registrations.devPlugin, 'plugins present on connection.');
 
@@ -33,7 +34,7 @@ Test('configures', Async(function *(t) {
     catch (error) {
         console.log(error.stack);
     }
-    
+
 }));
 
 Test('environment', Async(function *(t) {

@@ -23,6 +23,7 @@ Supports [Shortstop](https://github.com/krakenjs/shortstop) handlers for superpo
 
 The resulting configuration (please see [Confidence](https://github.com/hapijs/confidence)) should contain the (minimum) following:
 
+- `server` - optional [server settings](https://hapijs.com/api#serversettings) overrides.
 - `connections` - object defining [server connections](http://hapijs.com/api#serverconnectionoptions), with key name being a default label.
 - `register` - an object defining [plugins](http://hapijs.com/api#plugins), with optional additional properties:
     - `enabled` - can be set to `false` to disable registering this plugin (defaults to `true`).
@@ -34,6 +35,15 @@ Example:
 
 ```json
 {
+    "server": {
+        "debug": {
+            "log": {
+                "$filter": "env.NODE_ENV",
+                "$default": ["debug"],
+                "production": ["warn"]
+            }
+        }
+    },
     "connections": {
         "api": {
             "port": "env:API_PORT"
