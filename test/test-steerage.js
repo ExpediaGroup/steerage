@@ -38,7 +38,7 @@ Test('configures', Async(function *(t) {
 }));
 
 Test('environment', Async(function *(t) {
-    t.plan(1);
+    t.plan(2);
 
     const server = new Hapi.Server();
 
@@ -55,6 +55,7 @@ Test('environment', Async(function *(t) {
             }
         });
 
+        t.equal(server.settings.debug.log[0], 'warn', 'server settings overriden by environment.');
         t.ok(server.select('web').registrations.prodPlugin, 'plugins present on connection.');
     }
     catch (error) {
