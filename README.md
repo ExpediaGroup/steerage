@@ -1,6 +1,6 @@
 # steerage
 
-[Hapi](http://hapijs.com) (version `>= 15.0.0 < 17.0.0`) composition tool leveraging [Confidence](https://github.com/hapijs/confidence).
+[Hapi](http://hapijs.com) (version `>= 15.0.0 < 17.0.0`) composition plugin leveraging [Confidence](https://github.com/hapijs/confidence).
 
 Supports [Shortstop](https://github.com/krakenjs/shortstop) handlers for superpowers.
 
@@ -8,24 +8,21 @@ Supports [Shortstop](https://github.com/krakenjs/shortstop) handlers for superpo
 
 `steerage` exports a function to configure a Hapi server.
 
-It takes the following arguments:
+### Configuration options
 
-- `options`
-    - `config` - a fully resolved path to a configuration document (relative paths in this document are from the document's location).
-    - `basedir` - optional alternative location to base `shortstop` relative paths from.
-    - `hooks` - an optional object containing hook functions consisting of:
-        - `config(manifest, callback)` - hook for modifying config prior to compose.
-        - `connection(name, config, callback)` - hook for modifying the server connection config before added.
-        - `register(name, config, callback)` - hook for modifying the plugin config before register.
-    - `protocols` - optional additional custom protocols for `shortstop`.
-    - `environment` - optional additional criteria for `confidence` property resolution and defaults to `{ env: process.env }`.
-- `callback(error, server)` - an optional callback - omitting returns a promise.
+- `config` - a fully resolved path to a configuration document (relative paths in this document are from the document's location).
+- `basedir` - optional alternative location to base `shortstop` relative paths from.
+- `hooks` - an optional object containing hook functions consisting of:
+    - `config(manifest, callback)` - hook for modifying config prior to compose.
+    - `connection(name, config, callback)` - hook for modifying the server connection config before added.
+    - `register(name, config, callback)` - hook for modifying the plugin config before register.
+- `protocols` - optional additional custom protocols for `shortstop`.
+- `environment` - optional additional criteria for `confidence` property resolution and defaults to `{ env: process.env }`.
 
 ### Manifest
 
 The resulting configuration (please see [Confidence](https://github.com/hapijs/confidence)) should contain the (minimum) following:
 
-- `server` - optional [server options](http://hapijs.com/api#new-serveroptions).
 - `connections` - object defining [server connections](http://hapijs.com/api#serverconnectionoptions), with key name being a default label.
 - `register` - an object defining [plugins](http://hapijs.com/api#plugins), with optional additional properties:
     - `enabled` - can be set to `false` to disable registering this plugin (defaults to `true`).
@@ -37,15 +34,6 @@ Example:
 
 ```json
 {
-    "server": {
-        "debug": {
-            "log": {
-                "$filter": "env.NODE_ENV",
-                "$default": ["debug"],
-                "production": ["warn"]
-            }
-        }
-    },
     "connections": {
         "api": {
             "port": "env:API_PORT"
@@ -78,9 +66,16 @@ In addition, the [Confidence](https://github.com/hapijs/confidence) configuratio
 ```javascript
 import Path from 'path';
 import Steerage from 'steerage';
+import Hapi from 'hapi';
 
-//Note: will return a promise if no callback.
-Steerage({ config: Path.join(__dirname, 'config', 'config.json')}, (error, server) => {
+const server = new Hapi.Server();
+
+server.register({
+    register: Steerage,
+    options: {
+        config: Path.join(__dirname, 'fixtures', 'config', 'config.json')
+    }
+}, (error) => {
     if (error) {
         console.error(error.stack);
         return;
@@ -97,12 +92,4 @@ Steerage({ config: Path.join(__dirname, 'config', 'config.json')}, (error, serve
         }
     });
 });
-```
-
-### CLI
-
-You can also run from the command line, assuming you have a configuration that doesn't rely on performing post-config steps.
-
-```shell
-steerage ./config/config.json
 ```
