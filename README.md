@@ -39,6 +39,8 @@ server.register({
 });
 ```
 
+WARNING: Do not `register` this plugin on a `connection`. Always use the root server.
+
 ### Configuration options
 
 - `config` - a fully resolved path to a configuration document (relative paths in this document are from the document's location).
