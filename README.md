@@ -1,12 +1,43 @@
 # steerage
 
-[Hapi](http://hapijs.com) (version `>= 15.0.0 < 17.0.0`) composition plugin leveraging [Confidence](https://github.com/hapijs/confidence).
+Plugin for configuring and composing [Hapi](http://hapijs.com) (version `>= 15.0.0 < 17.0.0`) servers.
 
-Supports [Shortstop](https://github.com/krakenjs/shortstop) handlers for superpowers.
+Leverages [Confidence](https://github.com/hapijs/confidence) for environment-aware configuration, [Shortstop](https://github.com/krakenjs/shortstop) for protocol handlers, and [Topo](https://github.com/hapijs/topo) for ordering.
 
-### API
+Includes hooks that enable boostrapping lifecycle events to be listened for.
 
-`steerage` exports a function to configure a Hapi server.
+### Usage
+
+```javascript
+const Path = require('path'_;
+const Steerage = require('steerage');
+const Hapi = require('hapi');
+
+const server = new Hapi.Server();
+
+server.register({
+    register: Steerage,
+    options: {
+        config: Path.join(__dirname, 'config', 'config.json')
+    }
+}, (error) => {
+    if (error) {
+        console.error(error.stack);
+        return;
+    }
+
+    //Do other stuffs with server object.
+
+    //Also, config values available via server.app.config, for example:
+    server.app.config.get('/server');
+
+    server.start(() => {
+        for (let connection of server.connections) {
+            console.log(`${connection.settings.labels} server running at ${connection.info.uri}`)
+        }
+    });
+});
+```
 
 ### Configuration options
 
@@ -70,36 +101,3 @@ Example:
 ```
 
 In addition, the [Confidence](https://github.com/hapijs/confidence) configuration store will be accessible on `server.app.config`.
-
-### Usage
-
-```javascript
-import Path from 'path';
-import Steerage from 'steerage';
-import Hapi from 'hapi';
-
-const server = new Hapi.Server();
-
-server.register({
-    register: Steerage,
-    options: {
-        config: Path.join(__dirname, 'fixtures', 'config', 'config.json')
-    }
-}, (error) => {
-    if (error) {
-        console.error(error.stack);
-        return;
-    }
-
-    //Do other stuffs with server object.
-
-    //Also, config values available via server.app.config, for example:
-    server.app.config.get('/server');
-
-    server.start(() => {
-        for (let connection of server.connections) {
-            console.log(`${connection.settings.labels} server running at ${connection.info.uri}`)
-        }
-    });
-});
-```
