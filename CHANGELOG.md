@@ -1,4 +1,8 @@
 
+### v4.0.0
+
+- [BREAKING] Converted to a plugin.
+
 ### v3.0.3
 
 - Default criteria for `confidence` is `{ env: process.env }`.
