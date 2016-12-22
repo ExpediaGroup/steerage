@@ -102,4 +102,6 @@ Example:
 }
 ```
 
-In addition, the [Confidence](https://github.com/hapijs/confidence) configuration store will be accessible on `server.app.config`.
+In addition, the [Confidence](https://github.com/hapijs/confidence) configuration store will be accessible as `server.app.config`.
+
+The resolved (for the `environment` at start time) JSON configuration can be viewed as `server.settings.app`.
