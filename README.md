@@ -9,7 +9,7 @@ Includes hooks that enable boostrapping lifecycle events to be listened for.
 ### Usage
 
 ```javascript
-const Path = require('path'_;
+const Path = require('path');
 const Steerage = require('steerage');
 const Hapi = require('hapi');
 
