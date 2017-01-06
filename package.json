@@ -38,5 +38,6 @@
     "lint": "eslint lib",
     "test": "tape test/*.js"
   },
-  "main": "./lib"
+  "main": "./lib",
+  "license": "MIT"
 }
