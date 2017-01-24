@@ -6,7 +6,7 @@ Leverages [Confidence](https://github.com/hapijs/confidence) for environment-awa
 
 Includes hooks that enable boostrapping lifecycle events to be listened for.
 
-### Usage
+### <a name="usage"></a>Usage
 
 ```javascript
 const Path = require('path');
@@ -41,7 +41,7 @@ server.register({
 
 WARNING: Do not `register` this plugin on a `connection`. Always use the root server.
 
-### Configuration options
+### <name="configuration"></a>Configuration options
 
 - `config` - a fully resolved path to a configuration document (relative paths in this document are from the document's location).
 - `basedir` - optional alternative location to base `shortstop` relative paths from.
@@ -52,7 +52,7 @@ WARNING: Do not `register` this plugin on a `connection`. Always use the root se
 - `protocols` - optional additional custom protocols for `shortstop`.
 - `environment` - optional additional criteria for `confidence` property resolution and defaults to `{ env: process.env }`.
 
-### Manifest
+### <a name="manifest"></a>Manifest
 
 The resulting configuration (please see [Confidence](https://github.com/hapijs/confidence)) should contain the (minimum) following:
 
