@@ -14,7 +14,6 @@
   "dependencies": {
     "determination": "^2.0.0",
     "dot-prop": "^4.1.1",
-    "entries": "^1.0.1",
     "hoek": "^5.0.2",
     "joi": "^13.0.2",
     "shortstop-handlers": "^1.0.1",
