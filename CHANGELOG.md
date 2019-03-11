@@ -1,4 +1,8 @@
 
+### 7.0.3
+
+- Update dependencies including allowing for peer dependency Hapi 18.
+
 ### 7.0.2
 
 - Adjusted fixtures and server creation for Hapi 17.

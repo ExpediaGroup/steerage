@@ -14,20 +14,20 @@
   "dependencies": {
     "determination": "^2.0.0",
     "dot-prop": "^4.1.1",
-    "hoek": "^5.0.2",
-    "joi": "^13.0.2",
+    "hoek": "^6.1.2",
+    "joi": "^14.3.1",
     "shortstop-handlers": "^1.0.1",
     "topo": "^3.0.0"
   },
   "peerDependencies": {
-    "hapi": ">=17.0.0 <18.0.0"
+    "hapi": ">=17.0.0"
   },
   "devDependencies": {
-    "eslint": "^4.11.0",
-    "eslint-config-hapi": "^11.1.0",
+    "eslint": "^5.15.1",
+    "eslint-config-hapi": "^12.0.0",
     "eslint-plugin-hapi": "^4.0.0",
-    "hapi": "^17.3.1",
-    "nyc": "^11.6.0",
+    "hapi": "^18.1.0",
+    "nyc": "^13.3.0",
     "tape": "^4.2.2"
   },
   "scripts": {
