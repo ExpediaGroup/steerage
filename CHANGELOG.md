@@ -1,4 +1,9 @@
 
+### 8.0.0
+
+- Update to support hapi v18 and to use @hapi scoped packages
+- BREAKING: @hapi/hapi version >= 18.3.1 now required (also note the new "@hapi/" npm scope)
+
 ### 7.0.3
 
 - Update dependencies including allowing for peer dependency Hapi 18.

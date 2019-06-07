@@ -3,7 +3,6 @@
 const Test = require('tape');
 const Steerage = require('../lib');
 const Path = require('path');
-const Hapi = require('hapi');
 
 Test('configures', async function (t) {
     t.plan(7);

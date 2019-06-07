@@ -1,10 +1,12 @@
 # steerage
 
-Plugin for configuring and composing [Hapi](http://hapijs.com) (version `>= 17.0.0 < 18.0.0`) servers through a configuration file or manifest.
+Plugin for configuring and composing [Hapi](http://hapijs.com) servers through a configuration file or manifest.
 
 Supports environment-aware configuration and more using [determination](https://github.com/tlivings/determination).
 
 ### Usage
+
+**Please note:** steerage version 8.x now requires hapi v18 - if you are still on hapi v17, please continue to use steerage version 7.x instead.
 
 ```javascript
 const Path = require('path');

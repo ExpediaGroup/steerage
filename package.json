@@ -1,7 +1,7 @@
 {
   "name": "steerage",
   "description": "Hapi plugin for server configuration and composition using confidence, topo, and shortstop.",
-  "version": "7.0.3",
+  "version": "8.0.0",
   "author": "Trevor Livingston <tlivings@gmail.com>",
   "repository": {
     "type": "git",
@@ -12,28 +12,28 @@
     "node": ">= 8.0.0"
   },
   "dependencies": {
+    "@hapi/hoek": "^7.1.0",
+    "@hapi/joi": "^15.0.3",
     "determination": "^2.0.0",
     "dot-prop": "^4.1.1",
-    "hoek": "^6.1.2",
-    "joi": "^14.3.1",
     "shortstop-handlers": "^1.0.1",
     "topo": "^3.0.0"
   },
   "peerDependencies": {
-    "hapi": ">=17.0.0"
+    "@hapi/hapi": ">=18.3.1"
   },
   "devDependencies": {
+    "@hapi/eslint-config-hapi": "^12.1.0",
+    "@hapi/eslint-plugin-hapi": "^4.3.3",
+    "@hapi/hapi": "^18.3.1",
     "eslint": "^5.15.1",
-    "eslint-config-hapi": "^12.0.0",
-    "eslint-plugin-hapi": "^4.0.0",
-    "hapi": "^18.1.0",
     "nyc": "^13.3.0",
     "tape": "^4.2.2"
   },
   "scripts": {
     "cover": "nyc npm test",
     "lint": "eslint lib",
-    "test": "tape test/*.js"
+    "test": "npm run lint && tape test/*.js"
   },
   "main": "./lib",
   "license": "MIT"
