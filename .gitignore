@@ -62,3 +62,6 @@ typings/
 
 # nyc
 .nyc_output
+
+# npm lock file
+package-lock.json

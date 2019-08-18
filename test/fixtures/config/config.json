@@ -27,5 +27,12 @@
             "plugin": "require:../otherPlugin.js",
             "before": "devPlugin"
         }
-    }
+    },
+    "route": [
+        {
+            "path": "/admin",
+            "method": "GET",
+            "handler": "require:../admin"
+        }
+    ]
 }

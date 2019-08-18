@@ -73,10 +73,11 @@ The resulting configuration (please see [determination](https://github.com/tlivi
 
 - `server` - optional [server settings](https://hapijs.com/api#serversettings) overrides.
 - `register` - an object defining [plugins](http://hapijs.com/api#plugins), with optional additional properties:
-    - `plugin` - Hapi 17 plugin object.
+    - `plugin` - Hapi plugin object.
     - `enabled` - can be set to `false` to disable registering this plugin (defaults to `true`).
     - `before` - a string or array of strings of plugin names (keys in the `plugins` object) used to reorder.
     - `after` - a string or array of strings of plugin names used to reorder.
+- `route` - an array of Hapi route configuration objects.
 
 Example:
 
@@ -105,7 +106,21 @@ Example:
                 }
             }
         }
-    }
+    },
+    "route": [
+        {
+            "path": "/admin",
+            "method": "GET",
+            "handler": "require:../admin",
+            "options": {
+                "auth": {
+                    "$filter": "env.NODE_ENV",
+                    "$default": false,
+                    "production": "required"
+                }
+            }
+        }
+    ]
 }
 ```
 

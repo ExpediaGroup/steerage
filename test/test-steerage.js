@@ -125,3 +125,23 @@ Test('error in hook', async function (t) {
         t.pass('received error.');
     }
 });
+
+Test('adds route', async function (t) {
+    try {
+        const server = await Steerage.init({
+            config: Path.join(__dirname, 'fixtures', 'config', 'config.json')
+        });
+
+        const response = await server.inject({
+            method: 'GET',
+            url: '/admin'
+        })
+
+        t.ok(response.payload === 'OK', 'added route');
+
+        t.end();
+    }
+    catch (error) {
+        console.log(error.stack);
+    }
+});
