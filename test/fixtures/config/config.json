@@ -28,7 +28,7 @@
             "before": "devPlugin"
         }
     },
-    "route": [
+    "routes": [
         {
             "path": "/admin",
             "method": "GET",

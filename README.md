@@ -77,7 +77,7 @@ The resulting configuration (please see [determination](https://github.com/tlivi
     - `enabled` - can be set to `false` to disable registering this plugin (defaults to `true`).
     - `before` - a string or array of strings of plugin names (keys in the `plugins` object) used to reorder.
     - `after` - a string or array of strings of plugin names used to reorder.
-- `route` - an array of Hapi route configuration objects.
+- `routes` - an array of Hapi route configuration objects.
 
 Example:
 
@@ -107,7 +107,7 @@ Example:
             }
         }
     },
-    "route": [
+    "routes": [
         {
             "path": "/admin",
             "method": "GET",

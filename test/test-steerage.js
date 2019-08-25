@@ -126,7 +126,7 @@ Test('error in hook', async function (t) {
     }
 });
 
-Test('adds route', async function (t) {
+Test('adds a route', async function (t) {
     try {
         const server = await Steerage.init({
             config: Path.join(__dirname, 'fixtures', 'config', 'config.json')
