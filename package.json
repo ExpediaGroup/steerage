@@ -12,12 +12,12 @@
     "node": ">= 8.0.0"
   },
   "dependencies": {
-    "@hapi/hoek": "^7.1.0",
-    "@hapi/joi": "^15.0.3",
+    "@hapi/hoek": "^8.5.0",
+    "@hapi/joi": "^16.1.7",
+    "@hapi/topo": "^3.0.0",
     "determination": "^2.0.0",
     "dot-prop": "^4.1.1",
-    "shortstop-handlers": "^1.0.1",
-    "topo": "^3.0.0"
+    "shortstop-handlers": "^1.0.1"
   },
   "peerDependencies": {
     "@hapi/hapi": ">=18.3.1"
