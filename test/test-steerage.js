@@ -6,7 +6,7 @@ const Path = require('path');
 const Hapi = require('hapi');
 
 Test('configures', async function (t) {
-    t.plan(7);
+    t.plan(10);
 
     try {
         const server = await Steerage.init({ config: Path.join(__dirname, 'fixtures', 'config', 'config.json') });
@@ -25,9 +25,16 @@ Test('configures', async function (t) {
 
         t.equal(server.app.config.get('name'), 'testApp', 'server.app.config get.');
 
+        t.deepEqual(server.app.config.get(), { nested: {}, name: 'testApp', nameCopy: 'testApp' }, 'server.app.config.get entire config.');
+
         server.app.config.set('hello.world', 'hello world!');
 
         t.equal(server.app.config.get('hello.world'), 'hello world!', 'server.app.config set.');
+
+        server.app.config.reset({ foo: 'bar' });
+
+        t.equal(server.app.config.get('foo'), 'bar', 'server.app.config reset.');
+        t.equal(server.app.config.get('hello.world'), undefined, 'server.app.config reset.');
     }
     catch (error) {
         console.log(error.stack);
