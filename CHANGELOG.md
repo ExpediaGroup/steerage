@@ -1,4 +1,4 @@
-### 7.1.0
+### 8.2.0
 
 - Added a `reset()` method that can be used to reset the entire `server.app.config` object
 - Formalized the `get()` behavior where calling `get()` with no key returns the entire config object
