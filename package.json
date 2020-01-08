@@ -1,13 +1,13 @@
 {
-  "name": "steerage",
+  "name": "@vrbo/steerage",
   "description": "Hapi plugin for server configuration and composition using confidence, topo, and shortstop.",
   "version": "8.1.1",
   "author": "Trevor Livingston <tlivings@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tlivings/steerage.git"
+    "url": "git://github.com/expediagroup/steerage.git"
   },
-  "bugs": "http://github.com/tlivings/steerage/issues",
+  "bugs": "http://github.com/expediagroup/steerage/issues",
   "engines": {
     "node": ">= 8.0.0"
   },
