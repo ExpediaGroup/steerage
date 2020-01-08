@@ -1,3 +1,6 @@
+### 8.3.0
+- Use `@vrbo` namespaced version of `determination`
+
 ### 8.2.0
 
 - Added a `reset()` method that can be used to reset the entire `server.app.config` object

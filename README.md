@@ -2,7 +2,7 @@
 
 Plugin for configuring and composing [Hapi](http://hapijs.com) servers through a configuration file or manifest.
 
-Supports environment-aware configuration and more using [determination](https://github.com/tlivings/determination).
+Supports environment-aware configuration and more using [`@vrbo/determination`](https://github.com/expediagroup/determination).
 
 ### Usage
 
@@ -38,7 +38,7 @@ Steerage.init({ config: Path.join(__dirname, 'config', 'config.json') }).then((s
 ```javascript
 const Path = require('path');
 const Steerage = require('@vrbo/steerage');
-const Determination = require('determination');
+const Determination = require('@vrbo/determination');
 
 const overrideResolve = Determination.create({ config: Path.join(__dirname, 'config', 'overrides.json') });
 
@@ -67,11 +67,11 @@ Steerage.init({ config: Path.join(__dirname, 'config', 'config.json'), onconfig 
 - `config` - access another property in the config.
 - `import` - imports another JSON file, supports comments.
 
-See [determination](https://github.com/tlivings/determination).
+See [`@vrbo/determination`](https://github.com/expediagroup/determination).
 
 ### Manifest
 
-The resulting configuration (please see [determination](https://github.com/tlivings/determination)) should contain the (minimum) following:
+The resulting configuration (please see [`@vrbo/determination`](https://github.com/expediagroup/determination)) should contain the (minimum) following:
 
 - `server` - optional [server settings](https://hapijs.com/api#serversettings) overrides.
 - `register` - an object defining [plugins](http://hapijs.com/api#plugins), with optional additional properties:
