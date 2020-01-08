@@ -12,7 +12,7 @@
     "node": ">= 8.0.0"
   },
   "dependencies": {
-    "determination": "^2.0.0",
+    "@vrbo/determination": "^3.0.0",
     "dot-prop": "^4.1.1",
     "hoek": "^6.1.2",
     "joi": "^14.3.1",
