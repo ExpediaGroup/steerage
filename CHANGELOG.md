@@ -1,3 +1,6 @@
+### 8.4.0
+- Add support for multiple manifest files. The `config` option now takes either a String or Array of fully resolved paths to configuration documents. If multiple paths are provided, they are merged together.
+
 ### 8.3.0
 - Use `@vrbo` namespaced version of `determination`
 
