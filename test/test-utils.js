@@ -2,7 +2,7 @@
 
 const Test = require('tape');
 const Proxyquire = require('proxyquire').noPreserveCache().noCallThru();
-const Utils = require('../lib/Utils');
+const Utils = require('../lib/utils');
 const Path = require('path');
 
 Test('createConfigResolver', async (t) => {
