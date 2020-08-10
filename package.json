@@ -16,7 +16,7 @@
     "@hapi/hoek": "^9.0.4",
     "@hapi/topo": "^3.0.0",
     "@vrbo/determination": "^4.0.0",
-    "dot-prop": "^4.1.1",
+    "dot-prop": "^5.2.0",
     "joi": "^17.2.0",
     "shortstop-handlers": "^1.0.1"
   },
