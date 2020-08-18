@@ -8,10 +8,6 @@ Supports environment-aware configuration and more using [`@vrbo/determination`](
 
 ### Usage
 
-**Please note:**
-* steerage version 8.x now requires hapi v18 - if you are still on hapi v17, please continue to use steerage version 7.x instead.
-* Versions >=7 are now available as `@vrbo/steerage`. Releases are no longer published as `steerage`.
-
 ```javascript
 const Path = require('path');
 const Steerage = require('@vrbo/steerage');
