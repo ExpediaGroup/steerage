@@ -1,8 +1,3 @@
-### [11.0.1] BREAKING CHANGES
-
-- [Fix(deps)] Drop support for `"@vrbo/determination": "4.0.0"`.
-- Update `"@vrbo/determination": "4.0.0"` to `V6.0.0`.
-
 ### [11.0.0] BREAKING CHANGES
 
 - [Breaking] Drop support for node < 12.
