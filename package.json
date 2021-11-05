@@ -1,7 +1,7 @@
 {
   "name": "@vrbo/steerage",
   "description": "Hapi plugin for server configuration and composition using confidence, topo, and shortstop.",
-  "version": "11.0.0",
+  "version": "11.1.0",
   "author": "Trevor Livingston <tlivings@gmail.com>",
   "repository": {
     "type": "git",
