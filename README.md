@@ -28,6 +28,8 @@ Steerage.init({ config: Path.join(__dirname, 'config', 'config.json') }).then((s
 - `onconfig(store)` - Hook for modifying config prior to creating list of plugins to register — may be async function or promise.
 - `protocols` - (Optional) Additional custom [shortstop](https://github.com/krakenjs/shortstop) protocols.
 - `environment` - (Optional) Additional criteria for [confidence](https://github.com/hapijs/confidence) property resolution and defaults to `{ env: process.env }`.
+- `defaults` (_Object_ | _String_) - optional default pre-resolved configuration values.
+- `overrides` (_Object_ | _String_) - optional override pre-resolved configuration values.
 
 ### Example onconfig hook
 
