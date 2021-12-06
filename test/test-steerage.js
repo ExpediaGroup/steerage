@@ -120,6 +120,37 @@ Test('multiple config paths', async (t) => {
     }
 });
 
+Test('determination properties for defaults and overrides', async (t) => {
+
+    try {
+        const server = await Steerage.init({
+            config: Path.join(__dirname, 'fixtures', 'config', 'config.json'),
+            defaults: {
+                server: {
+                    app: {
+                        foo: 'bar'
+                    }
+                }
+            },
+            overrides: {
+                server: {
+                    app: {
+                        name: 'overriddenName'
+                    }
+                }
+            }
+        });
+
+        t.equal(server.app.config.get('foo'), 'bar', 'adds default property.');
+        t.equal(server.app.config.get('name'), 'overriddenName', 'overrides a property.');
+
+        t.end();
+    }
+    catch (error) {
+        console.log(error.stack);
+    }
+});
+
 Test('disable plugin', async (t) => {
 
     try {
