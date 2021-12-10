@@ -154,4 +154,4 @@ server.app.config.get('my.app.property');
 server.app.config.set('my.app.property', true);
 ```
 
-The resolved (for the `environment` at start time) JSON configuration can be viewed as `server.settings.app`.
+The resolved (for the `environment` at start time) JSON configuration can be viewed as `server.settings.app`
