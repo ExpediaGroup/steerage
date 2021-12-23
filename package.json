@@ -18,7 +18,7 @@
   "dependencies": {
     "@hapi/hoek": "^9.0.4",
     "@hapi/topo": "^5.0.0",
-    "@vrbo/determination": "^6.0.0",
+    "@vrbo/determination": "git+https://github.com/ExpediaGroup/determination.git#4ad9f6896765b8bae4112910581a23360a186178",
     "dot-prop": "^5.2.0",
     "joi": "^17.2.0",
     "shortstop-handlers": "^1.0.1"
