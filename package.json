@@ -1,19 +1,25 @@
 {
   "name": "@vrbo/steerage",
-  "description": "Hapi plugin for server configuration and composition using confidence, topo, and shortstop.",
   "version": "12.1.1",
-  "author": "Trevor Livingston <tlivings@gmail.com>",
+  "description": "Hapi plugin for server configuration and composition using confidence, topo, and shortstop.",
+  "bugs": "http://github.com/expediagroup/steerage/issues",
   "repository": {
     "type": "git",
     "url": "git://github.com/expediagroup/steerage.git"
   },
-  "bugs": "http://github.com/expediagroup/steerage/issues",
-  "engines": {
-    "node": ">= 14.0.0",
-    "npm": ">=6.0.0"
+  "license": "MIT",
+  "author": "Trevor Livingston <tlivings@gmail.com>",
+  "main": "./lib",
+  "scripts": {
+    "commit": "cz",
+    "cover": "nyc npm test",
+    "lint": "eslint lib test",
+    "test": "npm run lint && tape test/*.js"
   },
-  "publishConfig": {
-    "access": "public"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "@hapi/hoek": "^9.0.4",
@@ -23,34 +29,28 @@
     "joi": "^17.2.0",
     "shortstop-handlers": "^1.0.1"
   },
-  "peerDependencies": {
-    "@hapi/hapi": ">=20.2.1"
-  },
   "devDependencies": {
     "@hapi/eslint-config-hapi": "^13.0.0",
     "@hapi/eslint-plugin-hapi": "^4.3.3",
     "@hapi/hapi": "^20.2.1",
-    "eslint": "^7.7.0",
-    "nyc": "^15.1.0",
-    "proxyquire": "^2.1.3",
-    "tape": "^5.0.1",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
-    "semantic-release": "^18.0.1"
+    "eslint": "^7.7.0",
+    "nyc": "^15.1.0",
+    "proxyquire": "^2.1.3",
+    "semantic-release": "^18.0.1",
+    "tape": "^5.0.1"
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
+  "peerDependencies": {
+    "@hapi/hapi": ">=20.2.1"
   },
-  "scripts": {
-    "cover": "nyc npm test",
-    "lint": "eslint lib test",
-    "test": "npm run lint && tape test/*.js",
-    "commit": "cz"
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">=6.0.0"
   },
-  "main": "./lib",
-  "license": "MIT"
+  "publishConfig": {
+    "access": "public"
+  }
 }
