@@ -10,6 +10,13 @@
   "license": "MIT",
   "author": "Trevor Livingston <tlivings@gmail.com>",
   "main": "./lib",
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "commit": "cz",
     "cover": "nyc npm test",
@@ -45,12 +52,5 @@
   },
   "peerDependencies": {
     "@hapi/hapi": ">=20.2.1"
-  },
-  "engines": {
-    "node": ">= 14.0.0",
-    "npm": ">=6.0.0"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
