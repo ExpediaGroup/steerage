@@ -1,6 +1,6 @@
 {
   "name": "@vrbo/steerage",
-  "version": "12.1.1",
+  "version": "12.1.3",
   "description": "Hapi plugin for server configuration and composition using confidence, topo, and shortstop.",
   "bugs": "http://github.com/expediagroup/steerage/issues",
   "repository": {
