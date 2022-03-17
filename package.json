@@ -33,6 +33,7 @@
     "@hapi/topo": "^5.0.0",
     "@vrbo/determination": "^6.1.0",
     "dot-prop": "^5.2.0",
+    "hapi-datadog-intrumentation": "^1.0.15",
     "joi": "^17.2.0",
     "shortstop-handlers": "^1.0.1"
   },

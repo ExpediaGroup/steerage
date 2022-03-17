@@ -1,0 +1,34 @@
+{
+    // don't change this value here...
+    "initLibraries": {
+        "hapiDatadogInstrumentation": {
+            // datadog tracer options: https://github.com/DataDog/dd-trace-js/blob/e34b68b966cf807f3cbff768848155b6649412fb/index.d.ts#L188
+            "tracerOptions": {
+                "logInjection": true
+            },
+            // https://datadoghq.dev/dd-trace-js/modules/plugins.html
+            "pluginOptions": [
+                {
+                    // see config options https://datadoghq.dev/dd-trace-js/interfaces/plugins.hapi.html
+                    "name": "hapi",
+                    "config": {
+                        "blocklist": [
+                            "/management/health"
+                        ]
+                    }
+                }
+            ]
+        },
+        // add more packages here if needed
+        "otherPackage": {
+            "options": {
+                // shortstop-handlers are available at this file ex:
+                "option1": {
+                    "$filter": "env.NODE_ENV",
+                    "production": "productionvalue",
+                    "$default": "defaultvalue"
+                }
+            }
+        }
+    }
+}
