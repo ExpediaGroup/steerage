@@ -1,6 +1,5 @@
 ## [12.1.3](https://github.com/expediagroup/steerage/compare/v12.1.2...v12.1.3) (2022-01-11)
 
-
 ### Bug Fixes
 
 * explicitly force determination 6.0.1 ([#39](https://github.com/expediagroup/steerage/issues/39)) ([5c6268b](https://github.com/expediagroup/steerage/commit/5c6268b57f3dee72ff9e43063ed0b18a43dd8e24))
