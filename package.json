@@ -11,8 +11,8 @@
   "author": "Trevor Livingston <tlivings@gmail.com>",
   "main": "./lib",
   "engines": {
-    "node": ">= 16.0.0",
-    "npm": ">=8.0.0"
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
   },
   "publishConfig": {
     "access": "public"
