@@ -39,7 +39,7 @@
   "devDependencies": {
     "@hapi/eslint-config-hapi": "^13.0.0",
     "@hapi/eslint-plugin-hapi": "^4.3.3",
-    "@hapi/hapi": "^20.2.1",
+    "@hapi/hapi": "^21.2.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "commitizen": "^4.2.4",
