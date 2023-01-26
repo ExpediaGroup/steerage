@@ -29,7 +29,7 @@
     }
   },
   "dependencies": {
-    "@hapi/hoek": "^9.0.4",
+    "@hapi/hoek": "^11.0.2",
     "@hapi/topo": "^5.0.0",
     "@vrbo/determination": "^6.0.1",
     "dot-prop": "^5.2.0",
